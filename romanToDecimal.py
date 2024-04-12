@@ -21,7 +21,7 @@ def isValidRoman(str):
         if s not in romanDict:
             return False
         currentVal = romanDict[s]
-        if lastVal // currentVal in (5, 10):
+        if currentVal * 10 < lastVal:
             return False
         else:
             lastVal = currentVal
@@ -53,6 +53,7 @@ def stringToDecimal(str):
 
 if __name__ == "__main__":
     romanString = ""
+    print("Welcome to the Roman to decimal converter! Please enter a valid Roman numeral.\n")
     while True:
         romanString = input("Roman numeral: ").upper()
         if romanString == "":
